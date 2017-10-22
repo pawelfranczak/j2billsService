@@ -23,6 +23,10 @@ public class JournalService {
 		return dao.getList(limit, offset);
 	}
 	
+	public List<Journal> getListObjects(int limit, int offset, long accountId) {
+		return dao.getList(limit, offset, accountId);
+	}
+	
 	public Journal getObjectById(long id) {
 		return dao.getById(id);
 	}
@@ -65,6 +69,14 @@ public class JournalService {
 		jmNew.setTarget(target);
 		
 		return jmNew;
+	}
+	
+	public long getCountOfJournalsEntries() {
+		return dao.getCountOfJournalsEntries();
+	}
+	
+	public long getCountOfJournalsEntries(long accountId) {
+		return dao.getCountOfJournalsEntries(accountId);
 	}
 	
 }
